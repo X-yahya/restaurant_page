@@ -16,7 +16,7 @@ function createHomePage() {
     introVid.src = introVideo ;
     introVid.autoplay = true;
     introVid.loop = true;
-    introVid.volume = 0;
+    introVid.volume = 0.05;
     introVid.width = 640;
     introVid.height = 360;
     homepage.appendChild(introVid);
@@ -64,7 +64,7 @@ function createHomePage() {
 
     infosection.appendChild(infosectionleftpart) ; 
     infosection.appendChild(infosectionrightpart) ;
-    homepage.appendChild(infosection);
+    welcomeText.appendChild(infosection);
     content.appendChild(homepage);
 }
 
