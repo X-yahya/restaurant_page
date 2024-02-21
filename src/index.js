@@ -1,7 +1,7 @@
 import createHomePage from "./homepage";
 import createAboutPage from "./about";
 import createMenuPage from "./menu";
-
+import './style.css';
 const tabswitch = () => {
     const home = document.querySelector(".home");
     const about = document.querySelector(".about");
@@ -17,15 +17,14 @@ const tabswitch = () => {
             if (button === home) {
                 content.innerHTML = ""; 
                 createHomePage();
-                // current = content.firstChild;
+
             } else if (button === about) {
                 content.innerHTML = ""; 
                 createAboutPage();
-                // current = content.firstChild;
+
             } else if (button === menu) {
                 content.innerHTML = ""; 
                 createMenuPage();
-                // current = content.firstChild;
             }
         });
     });
