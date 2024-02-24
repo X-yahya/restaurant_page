@@ -1,42 +1,44 @@
-class contentManager
+export default class element
 {
-    constructor (selector)
+   constructor(elementType)
+   {
+        this.elementType = elementType ; 
+        this.attributes = {} ; 
+        this.children = [] ;
+   }
+   addAttributes(attributes) 
+   {
+    for(const i in Object.keys(attributes))
     {
-        this.content = document.querySelector(selector) ; 
+        this.attributes[i] = attributes[i] ;
     }
-    createDivElement(classname)
+    return this ; 
+   }
+   SetTextContent(string)
+   {
+        this.children =  [] ; 
+        this.innerHtml = string ; 
+        return this ; 
+   }
+   build()
+   {
+    let DomElem = document.createElement(this.elementType) ; 
+    for(const k of Object.keys(this.attributes))
     {
-        const div = document.createElement("div") ; 
-        div.classList.add(classname) ; 
-        return div ; 
+        DomElem.setAttributes(k , this.attributes[k]) ;
     }
-    createImgElement(src , width , height)
+    if(this.innerHtml == undefined)
     {
-        const img  = document.createElement("img") ; 
-        img.src = src ; 
-        img.width = width; 
-        img.height = height ; 
-        return img ; 
+        for(const child of this.children)
+        {
+            DomElem.appendChild(child.build()) ; 
+        }
     }
-    createVidElement(src , width , height,autoPlay,Loop,soundLevel)
+    else
     {
-        const vid = document.createElement("video") ; 
-        vid.autoplay = autoPlay;
-        vid.loop = Loop ; 
-        vid.soundLevel = soundLevel ;  
-        return vid ; 
+        let DomInnerHtml = document.createTextNode(this.innerHtml) ;
+        DomElem.appendChild(DomInnerHtml) ; 
     }
 
-    appendChildFunc(parent,childs) 
-    {
-        childs.forEach(child => {
-
-            parent.appendChild(child) ; 
-        });
-    }
-
-    
-
-
+   }
 } ; 
-export default contentManager ; 
