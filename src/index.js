@@ -1,8 +1,7 @@
 import HomePage from "./HomePage";
+import loadStructure  from "./structure";
 
-
-
-const homePage = new HomePage() ; 
+loadStructure();
 
 
 
