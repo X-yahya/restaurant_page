@@ -1,6 +1,6 @@
 export default class createElem
 {
-    constructor(type , attributes , childs)
+    constructor(type)
     {
         this.type = type ; 
         this.attributes = {} ; 
@@ -37,17 +37,19 @@ export default class createElem
         
         for(const i of Object.keys(this.attributes))
         {
-            DomElement.addAttributes(i , this.attributes[i]) ;
+            DomElement.setAttribute(i , this.attributes[i]) ;
         }
 
-            if (this.innerText === undefined) {
-                for (const child of this.children) {
-                DomElement.appendChild(child.build());
-                }
-            } else {
-                let DominnerText = document.createTextNode(this.innerText);
-                DomElement.appendChild(DominnerText);
+        if (this.innerText === undefined) {
+            for (const child of this.childs) 
+            {
+                DomElement.appendChild(child.load());
             }
+        } else {
+            let DominnerText = document.createTextNode(this.innerText);
+            DomElement.appendChild(DominnerText);
         }
-
+        return DomElement ; 
+    }
 }
+       
