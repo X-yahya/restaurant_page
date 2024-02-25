@@ -2,7 +2,6 @@ import createElem from "./createElem";
 
 
 
-
 export default function loadStructure()
 
 {   
@@ -18,8 +17,6 @@ const nav = new createElem("nav")
 .addAttributes({class:"Contact"} 
 ).setInnerText("Contact"));
 document.body.appendChild(nav.load());
-
-
 const content = new createElem("div")
 .addAttributes({class:"content"}) ; 
 document.body.appendChild(content.load());
