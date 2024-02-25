@@ -1,44 +1,57 @@
-export default class element
+class CreateElement
 {
-   constructor(elementType)
-   {
-        this.elementType = elementType ; 
+    constructor(type , attributes , childs )
+    {
+        this.type = type ; 
         this.attributes = {} ; 
-        this.children = [] ;
-   }
-   addAttributes(attributes) 
-   {
-    for(const i in Object.keys(attributes))
-    {
-        this.attributes[i] = attributes[i] ;
+        this.childs = childs ; 
     }
-    return this ; 
-   }
-   SetTextContent(string)
-   {
-        this.children =  [] ; 
-        this.innerHtml = string ; 
-        return this ; 
-   }
-   build()
-   {
-    let DomElem = document.createElement(this.elementType) ; 
-    for(const k of Object.keys(this.attributes))
+    addAttributes(attributes)
     {
-        DomElem.setAttributes(k , this.attributes[k]) ;
-    }
-    if(this.innerHtml == undefined)
-    {
-        for(const child of this.children)
+        for(const k in Object.keys(attributes))
         {
-            DomElem.appendChild(child.build()) ; 
+            this.attributes[k] = attributes[k] ; 
         }
+        return this ; 
     }
-    else
+    addChild(childElement)
     {
-        let DomInnerHtml = document.createTextNode(this.innerHtml) ;
-        DomElem.appendChild(DomInnerHtml) ; 
+        this.innerText = undefined ; 
+        this.childs.push(childElement); 
+        return this ; 
+    }
+    SetTextContent(string)
+    {
+        this.childs = [] ; 
+        this.innerText = string  ; 
+        return this ; 
+    }
+    build()
+    {
+        let DomElement = document.createElement(this.type) ; 
+
+        for(const i of Object.keys(this.attributes))
+        {
+            DomElement.addAttributes(i,this.attributes[i])  ;
+        }
+
+        if(this.innerText === undefined)
+        {
+            for(const child of this.childs)
+            {
+                DomElement.appendChild(child.build());
+            }
+        }
+        else
+        {
+            let Dominnertext = document.createTextNode(this.innerText);
+            DomElement.appendChild(Dominnertext);
+        }
+        return DomElement ; 
     }
 
-   }
-} ; 
+
+}
+
+
+export default CreateElement ; 
