@@ -2,7 +2,7 @@ import loadHome from "./HomePage";
 import loadMenu from "./Menu";
 import loadContact from "./contact";
 import loadStructure  from "./structure";
-
+import "./style.css"
 loadStructure()  ; 
 const homeebtn = document.querySelector(".Home") ; 
 const menuBtn = document.querySelector(".Menu") ;

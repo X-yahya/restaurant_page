@@ -1,0 +1,30 @@
+html,body
+{
+    padding: 0;
+    margin: 0   ;
+}
+
+body
+{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 20% 80%;
+
+}
+
+nav
+{
+    grid-row: 20%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.content
+{
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    background-color: aqua;
+}
