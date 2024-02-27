@@ -19,12 +19,38 @@ nav
     grid-template-columns: 33% 33% 33%;
     align-items: center;
     justify-content: space-around;
+    background-image: url(./assests/backImg.jpg);
+
 
 }
+nav button
+{   border: none;
+    color: white;
+    font-weight: 900;
+    font-size: larger;
+    height: 100%;
+    background: none;
+    cursor: pointer;
+}
+
 .content
 {
+    grid-row: 80%;
+    width: 100%;
+    background-color: #fffe;
     display: flex;
     align-items: center;
-    justify-content: center ;
-    background-color: aqua;
+    justify-content: space-around;
+    text-align: center;
+    
+   
+    
+}
+
+#home-img
+{
+    background-image: url(./assests/Homeimg.jpg);
+    width: 100%;
+    height: 500px;
+    border-radius: 50px;
 }
