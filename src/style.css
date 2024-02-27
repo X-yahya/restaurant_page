@@ -1,59 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kode+Mono:wght@400..700&display=swap');
-html,body
-{
+html,body {
     padding: 0;
-    margin: 0   ;
+    margin: 0;
 }
 
-body
-{
+body {
+    display: grid;
+    grid-template-rows: 15% 85%;
     height: 100vh;
-    display: grid;
-    grid-template-rows: 20% 80%;
-    font-family: "Kanit", sans-serif;
-    font-weight: 300;
-    font-style: normal;
+    background-image: url(./assests/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
 }
 
-nav
-{
-    grid-row: 20%;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
+nav {
+    grid-row: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-around;
-    background-image: url(./assests/backImg.jpg);
-
-
+    background-color: rgba(0, 0, 0, 0.5); 
 }
 nav button
-{   border: none;
-    color: white;
-    font-weight: 900;
-    font-size: larger;
-    height: 100%;
-    background: none;
-    cursor: pointer;
+{
+    background-color: yellow;
 }
-
 .content
 {
-    grid-row: 80%;
-    width: 100%;
-    background-color: #fffe;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    text-align: center;
-    
-   
-    
-}
-
-#home-img
-{
-    background-image: url(./assests/Homeimg.jpg);
-    width: 100%;
-    height: 500px;
-    border-radius: 50px;
+    grid-row: 2;
+    background-color: rgba(0, 0, 0, 0.5); 
 }
