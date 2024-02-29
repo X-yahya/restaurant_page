@@ -1,2 +1,2 @@
 # restaurant_page
-owo
+a simple restaurant page build fully with js 
